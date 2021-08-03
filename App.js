@@ -11,57 +11,52 @@ import { Button } from "react-native-elements";
 
 const Stack = createStackNavigator();
 
-
-
-
 export default class App extends Component {
   render() {
     const { route, navigation } = this.props;
     return (
-    
-        <SafeAreaProvider>
-          <StatusBar backgroundColor="#ffffff" />
-          <NavigationContainer>
-            <Stack.Navigator>
-              <Stack.Screen
-                options={{
-                  headerShown: false,
-                }}
-                name="HomePage"
-                component={BottomTabs}
-              />
-              <Stack.Screen
-                options={({ navigation, route }) => ({
-                  headerTitle: "",
-                  headerLeft: (props) => (
-                    <Button
-                      onPress={() => navigation.goBack()}
-                      type="clear"
-                      icon={<Icon name="arrow-left" size={20} />}
-                    />
-                  ),
-                })}
-                name="LoginPage"
-                component={LoginPage}
-              />
-              <Stack.Screen
-                options={({ navigation, route }) => ({
-                  headerTitle: "",
-                  headerLeft: (props) => (
-                    <Button
-                      onPress={() => navigation.goBack()}
-                      type="clear"
-                      icon={<Icon name="arrow-left" size={20} />}
-                    />
-                  ),
-                })}
-                name="RegisterPage"
-                component={RegisterPage}
-              />
-            </Stack.Navigator>
-          </NavigationContainer>
-        </SafeAreaProvider>
-     
+      <SafeAreaProvider>
+        <StatusBar backgroundColor="#ffffff" />
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              options={{
+                headerShown: false,
+              }}
+              name="HomePage"
+              component={BottomTabs}
+            />
+            <Stack.Screen
+              options={({ navigation, route }) => ({
+                headerTitle: "",
+                headerLeft: (props) => (
+                  <Button
+                    onPress={() => navigation.goBack()}
+                    type="clear"
+                    icon={<Icon name="arrow-left" size={20} />}
+                  />
+                ),
+              })}
+              name="LoginPage"
+              component={LoginPage}
+            />
+            <Stack.Screen
+              options={({ navigation, route }) => ({
+                headerTitle: "",
+                headerLeft: (props) => (
+                  <Button
+                    onPress={() => navigation.goBack()}
+                    type="clear"
+                    icon={<Icon name="arrow-left" size={20} />}
+                  />
+                ),
+              })}
+              name="RegisterPage"
+              component={RegisterPage}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
     );
   }
 }
