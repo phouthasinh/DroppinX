@@ -12,6 +12,8 @@ import { Button } from "react-native-elements";
 const Stack = createStackNavigator();
 
 
+
+
 export default class App extends Component {
   render() {
     const { route, navigation } = this.props;
